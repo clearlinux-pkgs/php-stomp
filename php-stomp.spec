@@ -4,7 +4,7 @@
 #
 Name     : php-stomp
 Version  : 2.0.2
-Release  : 1
+Release  : 2
 URL      : https://pecl.php.net//get/stomp-2.0.2.tgz
 Source0  : https://pecl.php.net//get/stomp-2.0.2.tgz
 Summary  : No detailed summary available
