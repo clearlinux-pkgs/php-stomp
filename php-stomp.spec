@@ -4,7 +4,7 @@
 #
 Name     : php-stomp
 Version  : 2.0.2
-Release  : 2
+Release  : 3
 URL      : https://pecl.php.net//get/stomp-2.0.2.tgz
 Source0  : https://pecl.php.net//get/stomp-2.0.2.tgz
 Summary  : No detailed summary available
@@ -29,6 +29,7 @@ lib components for the php-stomp package.
 
 %prep
 %setup -q -n stomp-2.0.2
+cd %{_builddir}/stomp-2.0.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -47,4 +48,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20180731/stomp.so
+/usr/lib64/extensions/no-debug-non-zts-20190902/stomp.so
