@@ -4,13 +4,14 @@
 #
 Name     : php-stomp
 Version  : 2.0.3
-Release  : 25
+Release  : 26
 URL      : https://pecl.php.net/get/stomp-2.0.3.tgz
 Source0  : https://pecl.php.net/get/stomp-2.0.3.tgz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : PHP-3.01
 Requires: php-stomp-lib = %{version}-%{release}
+Requires: php-stomp-license = %{version}-%{release}
 BuildRequires : buildreq-php
 
 %description
@@ -22,9 +23,18 @@ oriented and procedural interfaces.
 %package lib
 Summary: lib components for the php-stomp package.
 Group: Libraries
+Requires: php-stomp-license = %{version}-%{release}
 
 %description lib
 lib components for the php-stomp package.
+
+
+%package license
+Summary: license components for the php-stomp package.
+Group: Default
+
+%description license
+license components for the php-stomp package.
 
 
 %prep
@@ -40,6 +50,8 @@ phpize
 make  %{?_smp_mflags}
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/php-stomp
+cp %{_builddir}/stomp-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/php-stomp/b5469c326673cd097cc5e081bf40b1d9c0577644
 %make_install
 
 
@@ -48,4 +60,8 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20210902/stomp.so
+/usr/lib64/extensions/no-debug-non-zts-20220829/stomp.so
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/php-stomp/b5469c326673cd097cc5e081bf40b1d9c0577644
