@@ -7,7 +7,7 @@
 #
 Name     : php-stomp
 Version  : 2.0.3
-Release  : 70
+Release  : 71
 URL      : https://pecl.php.net/get/stomp-2.0.3.tgz
 Source0  : https://pecl.php.net/get/stomp-2.0.3.tgz
 Summary  : No detailed summary available
